@@ -1,2 +1,2 @@
 # cities
-https://boriskzd.github.io/cities/
+My first website, for promotional purposes.

@@ -1,0 +1,434 @@
+/* Removes margins and paddings from everything in html/body */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+} 
+
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+}
+ 
+#wrapper {
+    position: relative;
+}
+
+/* Navigation START */
+    header {
+        background: #111;
+        z-index: 1; /* Keeps header on top. Without this GoogleMaps would be over it. */
+    }
+
+    /* Makes navigations max width equal to the rest of the site */
+    #navy {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    #navLogoContainer {
+        width: 104px;
+    }
+
+    #navLogo {
+        display: block;
+        margin: 0 6px;
+    }
+
+    #myTopnav {
+        display: none; /* Hide it so it can be opened with dropnav jQuery */ 
+        position: relative;
+        list-style-type: none;
+        background-color: #111;
+        overflow: hidden;
+        clear: none;
+    }
+
+    #mainNav li {
+        display: block; /* Full width divs on mobile */
+    }
+
+    #menuIcon {
+        float: right;
+        display: inline-block;
+        /* Menu icon is in the top right corner */
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 40px;
+        padding: 10px 20px;
+    }
+
+    #mainNav ul li a {
+        display: block;
+        padding: 10px 20px;
+        text-align: center;
+        color: #eee;
+        height: 40px;
+        transition: 0.3s;
+    }
+
+    #mainNav ul li a.active {
+        background-color: #FD5B03;
+        color: #111;
+        font-weight: bold;
+    }
+
+    #mainNav ul li a:hover:not(.active) {
+        background-color: #444;
+    }
+
+    #menuIcon:hover {
+        cursor: pointer;
+        background: #444;
+    }
+
+    /* The look of the menu icon */
+    .menuIconLine {
+        width: 20px;
+        height: 2px;
+        margin: 4px 0;
+        background-color: #fff;
+    }
+/* Navigation END */
+
+/* Content START */
+/* declares width of the site and centers it */
+main {
+    margin: 0 auto;
+    max-width: 960px;
+    padding-bottom: 30px;
+}
+
+    /* Gallery START */
+    #imglry {
+        float: left;
+        clear: both;
+        margin: 6px;
+    }
+
+    #imglry .rspnsv {
+        position: relative;
+        float: left; /* resopnsive */
+        width: 100%;
+        padding: 6px 6px 2px 6px;
+    }
+
+
+    #imglry .rspnsv img {
+        width: 100%;
+        height: 100%;
+    }
+
+    #imglry .rspnsv .dscr {
+        position: absolute; /* is positioned relative to nearest positioned ancestor */
+        background: rgba(0,0,0,0.7); /* transparent description text div */
+        bottom: 26px;
+        left: 6px;
+        height: 50px; 
+        line-height: 50px; /* centers text in the desc */
+        padding: 0 15px;
+
+        /* text css */
+        color: #fff;
+        font-size: 1.5em;
+    }
+
+    /* hovered images are black and white */
+    .rspnsv a:hover {
+        filter: grayscale(100%);
+    }
+    /* Gallery END */
+
+    /* City START */
+    .city {
+        background: #e0e0e0;
+        color: #555;
+        padding: 20px;
+        margin: 20px 0;
+        overflow: auto;
+        clear: both;
+    }
+
+    .city h1 {
+        color: #FD5B03;
+        margin: 0 0 10px 0;
+        letter-spacing: 0.1em; 
+    }
+
+    /* makes text more readable */
+    .city p {
+        line-height: 1.5em;
+        padding: 10px 0 5px 0;
+        word-spacing: 0.2em;
+    }
+    /* City END */
+    
+    /* Pricing START */
+    .priceDiv {
+        width: 100%;
+        clear: both;
+    }
+
+    .priceColumn {
+        width: 100%;
+        float: left;
+        padding: 15px 10px;
+    }
+
+    .pricing {
+        border: 2px solid #e0e0e0;
+        list-style-type: none;
+        transition: 0.3s;
+    }
+
+    .pricing:hover {
+        box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+    }
+
+    .pricing li {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .pricing li:not(:last-child) {
+        border-bottom: 2px solid #e0e0e0;
+    }
+
+    .priceHeader {
+        background: #000;
+        color: #fff;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+    }
+
+    .pricePrice {
+        background: #e0e0e0;
+        height: 70px;
+    }
+
+    .priceFree {
+        background: #e0e0e0;
+        height: 70px;
+    }
+
+    .thePrice {
+        font-size:24px;
+    }
+
+    .priceSignup {
+        background: #e0e0e0;
+    }
+
+    .pricingButton {
+        background: #FD5B03;
+        color: #fff;
+        padding: 10px 30px;
+    }
+
+    .bestChoice {
+        background: #FD5B03;
+        color: #fff;
+        font-size: 1.5em;
+        letter-spacing: 2px;
+    }
+    /* Pricing END */
+
+    /* Google Maps START */
+    #mapResponsive {
+        clear: both;
+        position: relative;
+        padding-bottom: 50%;
+        padding-top: 20px;
+        margin: 20px 10px;
+    }
+
+    #mapResponsive iframe {
+        position: absolute;
+        width: 100% !important;
+        height: 100% !important;
+    }
+    /* Google Maps END*/
+/*Content END */
+
+/* Footer START */
+footer {
+    background: #333;
+    color: #ddd;
+    position: absolute;
+    width: 100%;
+}
+
+/* declares max width of the footer, just like the header */
+.footy {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footerColumnMain { 
+    width: 100%;
+    float: left;
+    padding: 0 20px;
+}
+
+.footerColumnMain a {
+    color: #FD5B03;
+}
+
+.footerColumn {
+    width: 100%;
+    float: left;
+    padding: 0 20px;
+}
+
+.footerColumn i {
+    margin: 3px;
+}
+
+.footerColumn a {
+    color: #ddd;
+}
+
+#footerColumnCompany ul {
+    list-style-type: none;
+}
+
+#footerColumnCompany li {
+    margin: 5px 0;
+}
+
+.footerColumn a:hover {
+    color:#FD5B03;
+}
+
+footer h4 {
+    text-transform: uppercase;
+    padding: 20px 0 0 0;
+}
+
+footer h4, p {
+    line-height: 1.5;
+    vertical-align: middle;
+}
+
+#footerEmail {
+    height: 40px;
+    width: 100%;
+    text-align: center;
+    margin: 4px 0;
+}
+
+.buttonSignup {
+    display: inline-block;
+    background: #FD5B03;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+    cursor: pointer;
+    margin: 4px 0 15px 0;
+}
+
+.cdbFooter {
+    background: #111;
+    color: #ddd;
+    width: 100%;
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.cdbFooter p {
+    display: inline-block;
+}
+
+#copyright {
+    float: left;
+}
+
+#designby {
+    float: right;
+}
+
+.orange {
+    color: #FD5B03;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media screen and (min-width: 500px) {
+    /* NAVIGATION */
+    /* NAV bar stays fixed when the page scrolls */ 
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+    /* Content beggins after the header/nav */
+    #wrapper {
+        margin-top: 40px;
+    }
+    /* LOGO floats left */
+    #navLogo {
+        float: left;
+    }
+    /* NAV list can be near other elements (logo) */
+    #myTopnav {
+        clear: none;
+        display: block;       
+    }
+    /* listed items are near each other, not below */
+    #myTopnav li {
+        display: inline-block;
+        float: left;
+    }
+    /* hides menu icon because all the listed items are shown */
+    #menuIcon {
+        display: none;
+    }
+    /* Two side by side images instead of 1 */
+    #imglry .rspnsv {
+        position: relative;
+        width: 50%;
+    }
+}   
+
+/* Footer columns */
+@media screen and (min-width: 700px) {
+    .footerColumnMain {
+        width: 50%;
+    }
+    .footerColumn {
+        width: 50%;
+    }
+    /* 3 side by side price columns instead of 1 */
+    .priceColumn {
+        width: 33.33%;
+        padding: 10px;
+    }
+}
+
+
+@media screen and (min-width: 800px) {
+    .footerColumn {
+        width: 25%;
+    }
+    /* 4 side by side images in the image gallery */
+    #imglry .rspnsv {
+        position: relative;
+        width: 25%;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    /* balances out margins and overall look of image gallery */
+    #imglry {
+        margin: 6px -6px;
+    }
+}
